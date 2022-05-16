@@ -1,0 +1,15 @@
+<h1>Posts</h1>
+<%= link_to "New post", new_post_path, class:"btn btn-info btn-lg btn-block"  %>
+<br>
+<div id="posts">
+  <% @posts.reverse_each do |post| %>
+    <%= post.created_at.strftime("%d-%m-%Y %H:%M")%>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post, class:"btn btn-secondary"  %>
+    </p>
+    <br/><br/>
+  <% end %>
+</div>
+
+
